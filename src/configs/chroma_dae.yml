@@ -1,0 +1,64 @@
+music2latent_mel_hdae_01:
+  name: "music2latent:chroma_dae:mel:config01"
+  semantic_encoder: 
+    indexes: [1, 2, 3]
+    out_channels: 32
+    # High compression encoder
+    encoder_01:
+      channels: [1, 64, 128, 512] 
+      ratios: [2, 2, 2]
+      bottleneck_channels: 16
+      output_channels: 32
+      time_scale: 4
+    # Mid compression encoder
+    encoder_02:
+      channels: [1, 64, 128, 512] 
+      ratios: [2, 2, 2]
+      bottleneck_channels: 16
+      output_channels: 32
+      time_scale: 8
+    # Low compression encoder
+    encoder_03:
+      channels: [1, 64, 128, 512] 
+      ratios: [2, 2, 2]
+      bottleneck_channels: 16
+      output_channels: 32
+      time_scale: 16
+
+  unet_1D:
+    channels: [64, 256, 512, 512, 1024]
+    ratios: [2, 2, 2, 2]
+    time_channels: 64
+
+
+music2latent_stft_hdae_01:
+  name: "music2latent:chroma_dae:stft:config01"
+  semantic_encoder: 
+    indexes: [1, 2, 3]
+    out_channels: 64
+    # High compression encoder
+    encoder_01:
+      channels: [1, 64, 256, 1024] 
+      ratios: [2, 2, 2]
+      bottleneck_channels: 16
+      output_channels: 64
+      time_scale: 4
+    # Mid compression encoder
+    encoder_02:
+      channels: [1, 64, 256, 1024] 
+      ratios: [2, 2, 2]
+      bottleneck_channels: 16
+      output_channels: 64
+      time_scale: 8
+    # Low compression encoder
+    encoder_03:
+      channels: [1, 64, 256, 1024] 
+      ratios: [2, 2, 2]
+      bottleneck_channels: 16
+      output_channels: 64
+      time_scale: 16
+
+  unet_1D:
+    channels: [64, 256, 512, 512, 1024]
+    ratios: [2, 2, 2, 2]
+    time_channels: 64

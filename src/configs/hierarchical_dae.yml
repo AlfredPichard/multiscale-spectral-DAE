@@ -1,0 +1,49 @@
+music2latent_hdae_01:
+  name: "music2latent_hdae:config_01"
+  semantic_encoder: 
+    encoder_type: "E"
+    channels: [64, 256, 512, 1024]
+    ratios: [2, 2, 2]
+    bottleneck_channels: [16, 16, 32, 64]
+    out_channels: 128
+    unet_use_skip: False
+    indexes: [1, 2, 3]
+
+  unet_1D:
+    channels: [64, 256, 512, 512, 1024]
+    ratios: [2, 2, 2, 2]
+    time_channels: 128
+
+  
+music2latent_hdae_02:
+  name: "music2latent_hdae:config_02"
+  semantic_encoder: 
+    encoder_type: "E"
+    channels: [64, 128, 256, 512]
+    ratios: [2, 2, 2]
+    bottleneck_channels: [16, 32, 64, 128]
+    out_channels: 64
+    unet_use_skip: False
+    indexes: [1, 2, 3]
+
+  unet_1D:
+    channels: [64, 128, 256, 512, 1024]
+    ratios: [2, 2, 2, 2]
+    time_channels: 64
+
+  
+music2latent_hdae_03:
+  name: "music2latent_hdae:config_03"
+  semantic_encoder: 
+    encoder_type: "E"
+    channels: [64, 128, 256, 512]
+    ratios: [2, 2, 2]
+    bottleneck_channels: [2, 2, 8, 32]
+    out_channels: 64
+    unet_use_skip: False
+    indexes: [1, 2, 3]
+
+  unet_1D:
+    channels: [64, 128, 256, 512, 1024]
+    ratios: [2, 2, 2, 2]
+    time_channels: 64
